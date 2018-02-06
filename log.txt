@@ -1,0 +1,11 @@
+commit 4d4808041e8f906f832cea3e1b8d9a45fc397f92 (HEAD -> master)
+Author: ChernelEvgeni <chernelz@mail.ru>
+Date:   Tue Feb 6 15:57:00 2018 +0300
+
+    add task1/status.txt
+
+commit 27a60297444b8fd1b5fd53418f59dd99df6d36d2
+Author: ChernelEvgeni <chernelz@mail.ru>
+Date:   Tue Feb 6 15:41:09 2018 +0300
+
+    add .gitignore
