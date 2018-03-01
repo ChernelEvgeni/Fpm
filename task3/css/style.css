@@ -1,0 +1,510 @@
+body{
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    min-width: 500px;
+}
+
+header{
+    background: gray;
+    height: 60px;
+    width: 100%;
+}
+
+div{
+    box-sizing: border-box;
+}
+
+.container_header a{
+    position: absolute;
+    text-decoration:  none;
+    font-family: "Architects Daughter";
+    color: white;
+    font-size: 35px;
+    margin-top: 4px;
+}
+
+.logo{
+    margin: 5px 5px 5px 15%;
+    height: 50px;
+    width: 50px;
+}
+
+.container1{
+    background: #D1FAEE;
+    height: 250px;
+    width: 100%;
+
+}
+.Filter {
+    float: left;
+    background: white;
+    border: 5px solid #dddddd;
+    margin-left: 12%;
+    margin-right: 10%;
+    width: 200px;
+    height: 100%;
+}
+
+.hashtagInput {
+    width: 100%;
+}
+
+
+.Input{
+    margin-top: 0;
+    font-size: 15px;
+}
+.Filter input{
+    width: 80%;
+    margin-left:10%;
+    margin-bottom: 3px;
+    height: 25px;
+    font-size: 15px;
+
+}
+
+.Text{
+    font-family: Сomic Sans MS, sans-serif;
+    padding: 5px 0px 0px 0px;
+    margin: 10px;
+    text-align: center;
+    font-size: 20px;
+
+}
+
+input
+{
+    font-family: Сomic Sans MS, sans-serif;
+    position:inherit ;
+    align-self: center;
+    margin: 5px 0 20px 50px;
+}
+
+
+
+.button{
+    font-family:  Century Gothic, sans-serif ;
+    background: gray;
+    color: black;
+    border-radius: 30px;
+    display: block;
+    width: 100px;
+    padding: 5px;
+    margin: 20px auto auto auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+#SizeButtoonSeach{
+    background: white;
+    margin: 10px 0 0 40px;
+    font-family:  Century Gothic, sans-serif ;
+    background: gray;
+    width: 100px;
+    text-align: center;
+    font-size: 12px;
+}
+.ButttonAddPhoto{
+    font-family:  Century Gothic, sans-serif ;
+    background: gray;
+    color: black;
+    display: block;
+    width: 130px;
+    margin: 40px 0 0 100px;
+    font-size: 12px;
+}
+
+.Photo{
+    float: left;
+    height: 75px;
+    width: 75px;
+    border: 2px solid white;
+    border-radius: 100px;
+}
+
+.TextHeader{
+    margin-left: 5%;
+    font-family:  Century Gothic, sans-serif ;
+    font-size: 25px;
+}
+
+.TextStyle{
+    font-family:  Century Gothic, sans-serif ;
+    margin-left: 5%;
+    font-size: 16px;
+}
+
+.post{
+    border: 1px solid #b3b3b3;
+    background: white;
+    height: 600px;
+    width: 400px;
+    float:left;
+}
+.Color{
+    background: #FDE2FA;
+}
+
+.delete{
+    margin-right: 10px;
+    margin-top: 3px;
+    float: right;
+    width: 27px;
+    height: 27px;
+}
+.SizeButton{
+    background: white;
+    border: white;
+    margin: 0px;
+    float: right;
+}
+
+.headPost{
+    height: 30px;
+    margin: 0px;
+}
+
+.edit{
+    margin-top: 5px;
+    float: right;
+    width: 23px;
+    height: 23px;
+}
+
+.nicknamePost{
+    font-size: 20px;
+    margin: auto;
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.datePhoto{
+    float:left;
+    font-size: 12px;
+    margin-left: 17px;
+    margin-top: 3px;
+}
+
+.blockNameDate{
+    margin-left: 60px;
+    margin-top: 3px;
+    width: 200px;
+    height: 50px;
+}
+
+.round{
+    float:left;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    margin-left: 10px;
+    padding-bottom: 2px;
+}
+
+
+
+.photo{
+    max-height: 100%;
+    width: 100%;
+}
+
+.Hashtag{
+    position: absolute;
+    margin: 0px;
+    width: 400px;
+    padding: 14px;
+    font-family: Сomic Sans MS, sans-serif;
+    font-size: 12px;
+    border: 1px solid #b3b3b3;
+    background: white;
+}
+
+.text{
+    width: 100%;
+    height: 50px;
+    margin: 0px 10px 10px 10px;
+    padding-top: 45px;
+    font-family: Сomic Sans MS, sans-serif;
+    font-size: 15px;
+}
+
+.like{
+    float: right;
+    position: relative;
+    margin-right: 10px;
+    margin-top: 0px;
+    width: 40px;
+    height: 40px;
+}
+
+.Footer{
+    background: grey;
+    height: 100%;
+    width: 100%;
+}
+
+.Footer p{
+    color: white;
+    margin: 0px;
+    padding: 30px 20% 20px 45%;
+    font-size: 15px;
+    font-family:  Century Gothic, sans-serif;
+
+}
+
+
+
+.Filter {
+    float: left;
+    background: white;
+    border: 5px solid #dddddd;
+    margin-left: 12%;
+    margin-right: 10%;
+    width: 200px;
+    height: 100%;
+}
+.WindowPhoto{
+    float: left;
+    padding-top: 1%;
+    width: 500px;
+}
+
+.TwoButton{
+    float: left;
+    padding-top: 1%;
+}
+.ButttonAddPhoto{
+    font-family:  Century Gothic, sans-serif ;
+    background: gray;
+    color: black;
+    display: block;
+    width: 130px;
+    margin: 40px 0 0 100px;
+    font-size: 12px;
+}
+#Info{
+    height: 100%;
+    background: #FDE2FA;
+    padding-left: 5%;
+    padding-right: 10%;
+    padding-top: 5%;
+    display: inline-block;
+}
+.download{
+    position: center;
+    padding-top: 30px;
+    padding-left: 40%;
+    padding-bottom: 30px;
+}
+
+
+
+@media (min-width: 500px) and (max-width: 726px) {
+    /* стили для sm-устройств */
+    .WindowPhoto{
+        width: 180px;
+    }
+    .Photo{
+
+        height: 75px;
+        width: 75px;
+        border: 2px solid white;
+        border-radius: 100px;
+        margin-left: 40px;
+    }
+    .TwoButton{
+        float: left;
+        width: 140px;
+    }
+    .ButttonAddPhoto{
+        font-family:  Century Gothic, sans-serif ;
+        background: gray;
+        color: black;
+        display: block;
+        width: 50px;
+        margin: 0px;
+        font-size: 12px;
+    }
+    .Filter {
+        float: left;
+        background: white;
+        border: 2px solid #dddddd;
+        margin:0%;
+        width: 170px;
+        height: 100%;
+    }
+    #Info{
+        height: 100%;
+        background: #FDE2FA;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 5%;
+        display: inline-block;
+    }
+    .download{
+        position: center;
+        padding-top: 5px;
+        padding-bottom: 70px;
+    }
+    .ButttonAddPhoto{
+        font-family:  Century Gothic, sans-serif ;
+        background: gray;
+        color: black;
+        width: 130px;
+        font-size: 12px;
+        float: left;
+        margin: 15px 40px 0 10px;
+    }
+
+}
+@media (min-width: 727px) and (max-width: 799px) {
+    /* стили для sm-устройств */
+    .WindowPhoto{
+        width: 440px;
+    }
+    .Filter {
+        float: left;
+        background: white;
+        border: 5px solid #dddddd;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 200px;
+        height: 100%;
+    }
+
+    .TextStyle{
+        font-family:  Century Gothic, sans-serif ;
+        margin-left: 1%;
+        font-size: 16px;
+    }
+    .TwoButton{
+        display: block;
+        float: left;
+    }
+    #Info{
+        height: 100%;
+        background: #FDE2FA;
+        padding-left: 25%;
+        padding-top: 5%;
+        display: inline-block;
+    }
+    .download{
+        position: center;
+        padding-top: 30px;
+        padding-bottom: 100px;
+    }
+    .ButttonAddPhoto{
+        font-family:  Century Gothic, sans-serif ;
+        background: gray;
+        color: black;
+        width: 130px;
+        font-size: 12px;
+        float: left;
+        margin: 15px 42px 0 17px;
+    }
+}
+@media (min-width: 800px) and (max-width: 1019px) {
+    /* стили для sm-устройств */
+    .Filter {
+        float: left;
+        background: white;
+        border: 5px solid #dddddd;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 200px;
+        height: 100%;
+    }
+    .TwoButton{
+        display: block;
+        float: left;
+    }
+    #Info{
+        height: 100%;
+        background: #FDE2FA;
+        padding-left: 25%;
+        padding-top: 5%;
+        display: inline-block;
+    }
+    .download{
+        position: center;
+        padding-top: 30px;
+        padding-bottom: 100px;
+    }
+    .ButttonAddPhoto{
+        font-family:  Century Gothic, sans-serif ;
+        background: gray;
+        color: black;
+        width: 130px;
+        font-size: 12px;
+        float: left;
+        margin: 15px 42px 0 17px;
+    }
+}
+@media (min-width: 1020px) and (max-width: 1209px) {
+    /* стили для sm-устройств */
+    .Filter {
+        float: left;
+        background: white;
+        border: 5px solid #dddddd;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 200px;
+        height: 100%;
+    }
+    .TwoButton{
+        display: block;
+        float: left;
+    }
+    #Info{
+        height: 100%;
+        background: #FDE2FA;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 5%;
+        display: inline-block;
+    }
+    .download{
+        position: center;
+        padding-top: 30px;
+        padding-bottom: 100px;
+    }
+    .ButttonAddPhoto{
+        font-family:  Century Gothic, sans-serif ;
+        background: gray;
+        color: black;
+        width: 130px;
+        font-size: 12px;
+        float: left;
+        margin: 15px 42px 0 17px;
+    }
+}
+@media (min-width: 1210px) and (max-width: 1418px) {
+    /* стили для md-устройств */
+    #Info{
+        height: 100%;
+        background: #FDE2FA;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 5%;
+        display: inline-block;
+    }
+    .download{
+        position: center;
+        padding-top: 30px;
+        padding-left: 40%;
+        padding-bottom: 30px;
+    }
+}
+@media (min-width: 1419px) {
+    /* стили для lg-устройств */
+    #Info{
+        height: 100%;
+        background: #FDE2FA;
+        padding-left: 5%;
+        padding-right: 10%;
+        padding-top: 5%;
+        display: inline-block;
+    }
+
+}

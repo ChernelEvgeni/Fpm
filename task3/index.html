@@ -1,10 +1,11 @@
 <!Doctype html>
 <html lang="rus">
 <head>
+    <link rel="SHORTCUT ICON" href="img/pinnsvin.png" type="image/x-icon">
     <meta charset="UTF-8">
     <title>Pinnsvin</title>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Architects+Daughter" />
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -16,7 +17,8 @@
     </div>
 </header>
 
-<section >
+
+<section>
     <div class="container1">
 
         <div class="Filter">
@@ -25,9 +27,16 @@
             <form class="Input">
                 <input type="text" placeholder="Введите имя" />
                 <input type="text" placeholder="Введите дату" />
-                <input type="text" placeholder="Введите хэштег" />
+                <input type="text" placeholder="Введите хэштег"   class="hashtagInput" list="suggestions" />
+                <datalist id = "suggestions" >
+                    <option>#FPMI</option>
+                    <option>#Belarus</option>
+                    <option>#Real_Madrid</option>
+                    <option>#Pinnsvin</option>
+                    <option>#Ronaldo</option>
+                </datalist>
             </form>
-            <p class="buttton">Поиск</p>
+            <button id="SizeButtoonSeach"><p >Поиск</p></button>
 
         </div>
 
@@ -42,20 +51,18 @@
             <span class="TextStyle">Подписки: 0</span>
         </div>
         <div class="TwoButton">
-            <p class="ButttonAddPhoto">Добавить фото</p>
-            <p class="ButttonAddPhoto">Выйти</p>
+            <button class="ButttonAddPhoto"><p>Добавить фото</p></button>
+            <button class="ButttonAddPhoto"><p>Выйти</p></button>
         </div>
     </div>
 </section>
 
-<section>
-    <div class="Info">
-        <div class="post">
+<main class="Color">
+    <section id="Info">
+        <article class="post">
             <div class="headPost">
-                <div class="buttonHead">
-                    <img src="img/waste.png" alt="" class="delete">
-                    <img src="img/edit.jpg" alt="" class="edit">
-                </div>
+                    <button class="SizeButton"><img src="img/waste.png" alt="" class="delete"></button>
+                <button class="SizeButton"> <img src="img/edit.jpg" alt="" class="edit"></button>
                 <img src="img/Real-madrid-logo.jpg" alt="" class="round">
                 <div class="blockNameDate">
                     <div class="nicknamePost">
@@ -67,29 +74,26 @@
                 </div>
 
             </div>
-            <div class="photoPlace">
+
                 <img src="img/Sergio_Ramos.jpg" alt="" class="photo">
-            </div>
 
             <div class="Hashtag">
                 #Real-Betis#@SergioRamos
             </div>
-            <div >
-                <img src="img/like.png" alt="bfrr" class="like">
-            </div>
+                <button class="SizeButton"><img src="img/like.png" alt="like" class="like"></button>
             <div class="text">
                 Real Betis 3-5 Real Madrid ⚽ 50' @SergioRamos 📞
             </div>
-        </div>
+        </article>
 
 
 
-        <div class="post">
+        <article class="post">
             <div class="headPost">
-                <div class="buttonHead">
-                    <img src="img/waste.png" alt="" class="delete">
-                    <img src="img/edit.jpg" alt="" class="edit">
-                </div>
+
+                    <button class="SizeButton"><img src="img/waste.png" alt="" class="delete"></button>
+                    <button class="SizeButton"> <img src="img/edit.jpg" alt="" class="edit"></button>
+
                 <img src="img/Real-madrid-logo.jpg" alt="real" class="round">
                 <div class="blockNameDate">
                     <div class="nicknamePost">
@@ -108,22 +112,18 @@
             <div class="Hashtag">
                 #APorLa13
             </div>
-            <div >
-                <img src="img/like.png" alt="like" class="like">
-            </div>
+            <button class="SizeButton"><img src="img/like.png" alt="like" class="like"></button>
             <div class="text">
                 Another special Champions League night at the Bernabéu!
                 ¡Noche de Champions mágica en el Bernabéu!
             </div>
-        </div>
+        </article>
 
 
-        <div class="post">
+        <article class="post">
             <div class="headPost">
-                <div class="buttonHead">
-                    <img src="img/waste.png" alt="" class="delete">
-                    <img src="img/edit.jpg" alt="" class="edit">
-                </div>
+                <button class="SizeButton"><img src="img/waste.png" alt="" class="delete"></button>
+                <button class="SizeButton"> <img src="img/edit.jpg" alt="" class="edit"></button>
                 <img src="img/Real-madrid-logo.jpg" alt="" class="round">
                 <div class="blockNameDate">
                     <div class="nicknamePost">
@@ -142,9 +142,7 @@
             <div class="Hashtag">
                 #Emirates | #RMUCL
             </div>
-            <div >
-                <img src="img/like.png" alt="bfrr" class="like">
-            </div>
+            <button class="SizeButton"><img src="img/like.png" alt="like" class="like"></button>
             <div class="text">
                 Real Madrid 3-1 Paris Saint-Germain
                 <br>
@@ -156,14 +154,12 @@
                 <br>
                 ⚽ 86' @MarceloTwelve
             </div>
-        </div>
+        </article>
 
-        <div class="post">
+        <article class="post">
             <div class="headPost">
-                <div class="buttonHead">
-                    <img src="img/waste.png" alt="" class="delete">
-                    <img src="img/edit.jpg" alt="" class="edit">
-                </div>
+                <button class="SizeButton"><img src="img/waste.png" alt="" class="delete"></button>
+                <button class="SizeButton"> <img src="img/edit.jpg" alt="" class="edit"></button>
                 <img src="img/Real-madrid-logo.jpg" alt="" class="round">
                 <div class="blockNameDate">
                     <div class="nicknamePost">
@@ -182,22 +178,18 @@
             <div class="Hashtag">
                 #HalaMadrid
             </div>
-            <div >
-                <img src="img/like.png" alt="bfrr" class="like">
-            </div>
+            <button class="SizeButton"><img src="img/like.png" alt="like" class="like"></button>
             <div class="text">
                 Best moments of 2017:
                 LaLiga 🏆
             </div>
-        </div>
+        </article>
 
 
-        <div class="post">
+        <article class="post">
             <div class="headPost">
-                <div class="buttonHead">
-                    <img src="img/waste.png" alt="" class="delete">
-                    <img src="img/edit.jpg" alt="" class="edit">
-                </div>
+                <button class="SizeButton"><img src="img/waste.png" alt="" class="delete"></button>
+                <button class="SizeButton"> <img src="img/edit.jpg" alt="" class="edit"></button>
                 <img src="img/Real-madrid-logo.jpg" alt="" class="round">
                 <div class="blockNameDate">
                     <div class="nicknamePost">
@@ -216,20 +208,16 @@
             <div class="Hashtag">
                 #HalaMadrid
             </div>
-            <div >
-                <img src="img/like.png" alt="bfrr" class="like">
-            </div>
+            <button class="SizeButton"><img src="img/like.png" alt="like" class="like"></button>
             <div class="text">
                 Real Madrid 5-2 Real Sociedad
             </div>
-        </div>
+        </article>
 
-        <div class="post">
+        <article class="post">
             <div class="headPost">
-                <div class="buttonHead">
-                    <img src="img/waste.png" alt="" class="delete">
-                    <img src="img/edit.jpg" alt="" class="edit">
-                </div>
+                <button class="SizeButton"><img src="img/waste.png" alt="" class="delete"></button>
+                <button class="SizeButton"> <img src="img/edit.jpg" alt="" class="edit"></button>
                 <img src="img/Real-madrid-logo.jpg" alt="" class="round">
                 <div class="blockNameDate">
                     <div class="nicknamePost">
@@ -248,25 +236,22 @@
             <div class="Hashtag">
                 #RMCopa | #HalaMadrid
             </div>
-            <div >
-                <img src="img/like.png" alt="bfrr" class="like">
-            </div>
+            <button class="SizeButton"><img src="img/like.png" alt="like" class="like"></button>
             <div class="text">
                 Leganés 0-1 Real Madrid
                 ⚽ 89' @MarcoAsensio10
             </div>
-        </div>
+        </article>
 
-    </div>
+    </section>
 
     <div class="download">
-        <p class="ButtonDownload" >Загрузить ещё</p>
-
+        <button class="ButttonAddPhoto"><p>Загрузить ещё</p></button>
     </div>
 
 
 
-</section>
+</main>
 
 <footer class="Footer">
     <div >
@@ -289,4 +274,3 @@
 
 </body>
 </html>
-
