@@ -197,16 +197,16 @@
     }
     function addPhotoPost(photoPost){
         if(validatePhotoPost(photoPost)){
-            return photoPosts.push(photoPost);
+             photoPosts.push(photoPost);
+             return true;
         }
             return false;
     }
 
     function getPhotoPost(id){
-       var found = photoPosts.find(function(element){
+        return found = photoPosts.find(function(element){
            return element.id === id;
        });
-       return found;
     }
 
     function editPhotoPost(string, photopost){
@@ -332,6 +332,18 @@
                 array[i].photoLink+ " hashtags: " + array[i].hashTags + " like:" +array[i].like + '\n');
         }
     }
+
+
+    return {
+        validatePhotoPost:validatePhotoPost,
+        print:print,
+        сompareCreatedAt:сompareCreatedAt,
+        getPhotoPosts: getPhotoPosts,
+        addPhotoPost: addPhotoPost,
+        getPhotoPost: getPhotoPost,
+        editPhotoPost: editPhotoPost,
+    }
+
     // console.log(getPhotoPost('2'));
     /*  if(validatePhotoPost(photoPosts[0]))
           console.log('est ');
@@ -342,9 +354,9 @@
 
     //editPhotoPost
 
-   /* print(photoPosts);
-    editPhotoPost('6',{descriprion:'rrrrrrrrrrrrrr', photoLink: 'oooo', hashTags:[] });
-    Print(photoPosts);*/
+    /* print(photoPosts);
+     editPhotoPost('6',{descriprion:'rrrrrrrrrrrrrr', photoLink: 'oooo', hashTags:[] });
+     Print(photoPosts);*/
     /* print(photoPosts);
     editPhotoPost('6',{descriprion:'', photoLink: 'oooo', hashTags:[] });
     Print(photoPosts);*/
@@ -371,23 +383,8 @@
    array = getPhotoPosts(0,10,{author:'', hashTags:'#CR7'});
    Print(array);*/
 
-
-
-
-
     //removePhotoPost('4');
-   // Print(photoPosts);
-
-    return {
-        validatePhotoPost:validatePhotoPost,
-        print:print,
-        сompareCreatedAt:сompareCreatedAt,
-        getPhotoPosts: getPhotoPosts,
-        addPhotoPost: addPhotoPost,
-        getPhotoPost: getPhotoPost,
-        editPhotoPost: editPhotoPost,
-    }
-
+    // Print(photoPosts);
 })();
 
 
