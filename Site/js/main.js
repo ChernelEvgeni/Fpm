@@ -1,4 +1,4 @@
-(function() {
+var postsFunction =(function() {
     var photoPosts = [
         {
             id: '1',
@@ -183,16 +183,12 @@
     ];
 
     function validatePhotoPost(photoPost){
-        if (typeof  photoPost.id === 'string' && typeof photoPost.descriprion === 'string' && photoPost.createdAt instanceof Date && typeof photoPost.author === 'string')
-        {
-                if (photoPost.descriprion.length < 200 && photoPost.author.length && photoPost.photoLink.length)
-                {
-                    return true;
-                }
-                else{
-                    return false;
-                }
-            }
+        if (typeof  photoPost.id === 'string' && typeof photoPost.descriprion === 'string' && photoPost.createdAt instanceof Date &&
+            typeof photoPost.author === 'string' && photoPost.descriprion.length < 200 && photoPost.author.length && photoPost.photoLink.length)
+           {
+             return true;
+           }
+
             return false;
     }
     function addPhotoPost(photoPost){
@@ -209,8 +205,8 @@
        });
     }
 
-    function editPhotoPost(string, photopost){
-        var  bufferPhotopost = getPhotoPost(string);
+    function editPhotoPost(id, photopost){
+        var  bufferPhotopost = getPhotoPost(id);
 
        if(!photopost.descriprion && !photopost.photoLink && !photopost.hashTags ) {
            return false;
@@ -323,7 +319,7 @@
             }
         }
 
-        return bufferArray.sort(CompareCreatedAt).splice(skip,top);
+        return bufferArray.sort(сompareCreatedAt).splice(skip,top);
     }
 
     function print(array) {
@@ -334,58 +330,64 @@
     }
 
 
-    return {
+
+
+   return {
+        photoPosts: photoPosts,
         validatePhotoPost:validatePhotoPost,
         print:print,
         сompareCreatedAt:сompareCreatedAt,
-        getPhotoPosts: getPhotoPosts,
-        addPhotoPost: addPhotoPost,
         getPhotoPost: getPhotoPost,
+        addPhotoPost: addPhotoPost,
+        getPhotoPosts: getPhotoPosts,
         editPhotoPost: editPhotoPost,
     }
 
-    // console.log(getPhotoPost('2'));
-    /*  if(validatePhotoPost(photoPosts[0]))
-          console.log('est ');
-      else
-          console.log('no ');
-          */
-
-
-    //editPhotoPost
-
-    /* print(photoPosts);
-     editPhotoPost('6',{descriprion:'rrrrrrrrrrrrrr', photoLink: 'oooo', hashTags:[] });
-     Print(photoPosts);*/
-    /* print(photoPosts);
-    editPhotoPost('6',{descriprion:'', photoLink: 'oooo', hashTags:[] });
-    Print(photoPosts);*/
-    /* print(photoPosts);
-   editPhotoPost('6',{descriprion:'Uefa', photoLink: 'uuuirfn', hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] });
-   Print(photoPosts);*/
-    /* print(photoPosts);
-  editPhotoPost('6',{descriprion:'Uefa', hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] });
-  Print(photoPosts);*/
-    /* print(photoPosts);
- editPhotoPost('6',{hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] });
- Print(photoPosts);*/
-
-
-    //getPhotoPosts
-
-    /* var array = new Array();
-    array = getPhotoPosts(0,10,{author:'Mr.Snow', hashTags:'#CR7'});
-    Print(array);*/
-    /* var array = new Array();
-    array = getPhotoPosts(0,10,{author:'Mr.Snow'});
-    Print(array);*/
-    /* var array = new Array();
-   array = getPhotoPosts(0,10,{author:'', hashTags:'#CR7'});
-   Print(array);*/
-
-    //removePhotoPost('4');
-    // Print(photoPosts);
 })();
 
 
+ console.log(postsFunction.getPhotoPost('2'));
+
+
+
+
+//editPhotoPost
+
+postsFunction.print(postsFunction.photoPosts);
+postsFunction.editPhotoPost('6',{descriprion:'rrrrrrrrrrrrrr', photoLink: 'oooo', hashTags:[] });
+postsFunction.print(postsFunction.photoPosts);
+
+postsFunction.print(postsFunction.photoPosts);
+postsFunction.editPhotoPost('6',{descriprion:'', photoLink: 'oooo', hashTags:[] });
+postsFunction.print(postsFunction.photoPosts);
+
+postsFunction.print(postsFunction.photoPosts);
+postsFunction.editPhotoPost('6',{descriprion:'Uefa', photoLink: 'uuuirfn', hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] });
+postsFunction.print(postsFunction.photoPosts);
+
+postsFunction.print(postsFunction.photoPosts);
+postsFunction.editPhotoPost('6',{descriprion:'Uefa', hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] });
+postsFunction.print(postsFunction.photoPosts);
+
+postsFunction.print(postsFunction.photoPosts);
+editPhotoPost('6',{hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] });
+postsFunction.print(postsFunction.photoPosts);
+
+
+//getPhotoPosts
+
+ var array = new Array();
+array = postsFunction.getPhotoPosts(0,10,{author:'Mr.Snow', hashTags:'#CR7'});
+postsFunction.print(array);
+
+ var array = new Array();
+array = postsFunction.getPhotoPosts(0,10,{author:'Mr.Snow'});
+postsFunction.print(array);
+
+var array = new Array();
+array = postsFunction.getPhotoPosts(0,10,{author:'Mr.Snow',hashTags:'#CR7'});
+postsFunction.print(array);
+
+postsFunction.removePhotoPost('4');
+postsFunction.print(photoPosts);
 
