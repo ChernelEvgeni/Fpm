@@ -185,123 +185,105 @@
     function validatePhotoPost(photoPost){
         if (typeof  photoPost.id === 'string' && typeof photoPost.descriprion === 'string' && photoPost.createdAt instanceof Date && typeof photoPost.author === 'string')
         {
-                if (photoPost.descriprion.length < 200 && photoPost.author.length > 0 && photoPost.photoLink.length > 0)
+                if (photoPost.descriprion.length < 200 && photoPost.author.length && photoPost.photoLink.length)
                 {
                     return true;
                 }
                 else{
                     return false;
                 }
-
             }
             return false;
     }
     function addPhotoPost(photoPost){
         if(validatePhotoPost(photoPost)){
-            photoPosts.push(photoPost);
-            return true;
+            return photoPosts.push(photoPost);
         }
             return false;
     }
 
     function getPhotoPost(id){
-
        var found = photoPosts.find(function(element){
            return element.id === id;
        });
-
        return found;
     }
-    function countCorrectlyFild(Object) {
-        var count = 0;
 
-        if(Object.photoLink)
-            count++;
-        if(Object.descriprion)
-            count++;
-        if(Object.hashTags)
-            count++;
+    function editPhotoPost(string, photopost){
+        var  bufferPhotopost = getPhotoPost(string);
 
-        return count;
+       if(!photopost.descriprion && !photopost.photoLink && !photopost.hashTags ) {
+           return false;
+       }
+       else{
+           if (photopost.descriprion && photopost.photoLink && photopost.hashTags) {
+               if (photopost.descriprion.length < 200 && photopost.photoLink.length && photopost.hashTags.length) {
+                   bufferPhotopost.photoLink = photopost.photoLink;
+                   bufferPhotopost.descriprion = photopost.descriprion;
+                   bufferPhotopost.hashTags = photopost.hashTags
+                   return true;
+               }
+               else return false;
+           }
+
+           if (photopost.photoLink && photopost.descriprion && !photopost.hashTags) {
+               if (photopost.photoLink.length && photopost.descriprion.length < 200) {
+                   bufferPhotopost.photoLink = photopost.photoLink;
+                   bufferPhotopost.descriprion = photopost.descriprion;
+                   return true;
+               }
+               else
+                   return false;
+           }
+
+           if (photopost.photoLink && !photopost.descriprion && photopost.hashTags) {
+               if (photopost.photoLink.length && photopost.hashTags.length) {
+                   bufferPhotopost.photoLink = photopost.photoLink;
+                   bufferPhotopost.hashTags = photopost.hashTags;
+                   return true;
+               }
+               else
+                   return false;
+           }
+
+           if (!photopost.photoLink && photopost.descriprion && photopost.hashTags) {
+               if (photopost.descriprion.length < 200 && photopost.hashTags.length) {
+                   bufferPhotopost.descriprion = photopost.descriprion;
+                   bufferPhotopost.hashTags = photopost.hashTags;
+                   return true;
+               }
+               else
+                   return false;
+           }
+
+           if (photopost.photoLink) {
+               if (photopost.photoLink.length) {
+                   bufferPhotopost.photoLink = photopost.photoLink;
+                   return true;
+               }
+               else
+                   return false;
+           }
+
+           if (photopost.descriprion) {
+               if (photopost.descriprion.length < 200) {
+                   bufferPhotopost.descriprion = photopost.descriprion;
+                   return true;
+               }
+               else
+                   return false;
+           }
+           else if (photopost.hashTags && photopost.hashTags.length) {
+               bufferPhotopost.hashTags = photopost.hashTags;
+               return true;
+           }
+       }
+
     }
-    function editPhotoPost(string, object){
-        var  bufferObject = getPhotoPost(string);
+        function сompareCreatedAt(a, b){
+           return(a.createdAt) - (b.createdAt);
+           }
 
-        if(countCorrectlyFild(object)== 3){
-            if(object.descriprion && object.photoLink){
-                if (object.descriprion.length < 200 && object.photoLink.length > 0 && object.hashTags.length > 0  ){
-                    bufferObject.photoLink = object.photoLink;
-                    bufferObject.descriprion = object.descriprion;
-                    bufferObject.hashTags = object.hashTags
-                    return true;
-                }
-                else return false;
-            }
-            else return false;
-        }
-
-
-        if(countCorrectlyFild(object)==2) {
-            if (object.photoLink && object.descriprion && !object.hashTags) {
-                if (object.photoLink.length > 0 && object.descriprion.length < 200) {
-                    BufferObject.photoLink = object.photoLink;
-                    BufferObject.descriprion = object.descriprion;
-                    return true;
-                }
-                else
-                    return false;
-            }
-
-            if (object.photoLink && !object.descriprion && object.hashTags) {
-                if (object.photoLink.length > 0 && object.hashTags.length > 0) {
-                    BufferObject.photoLink = object.photoLink;
-                    BufferObject.hashTags = object.hashTags;
-                    return true;
-                }
-                else
-                    return false;
-            }
-
-            if (!object.photoLink && object.descriprion && object.hashTags) {
-                if ( object.descriprion.length < 200 && object.hashTags.length > 0) {
-                    BufferObject.descriprion = object.descriprion;
-                    BufferObject.hashTags = object.hashTags;
-                    return true;
-                }
-                else
-                    return false;
-            }
-
-        }
-
-        if(countCorrectlyFild(object)==1) {
-            if (object.photoLink) {
-                if (object.photoLink.length > 0) {
-                    BufferObject.photoLink = object.photoLink;
-                    return true;
-                }
-                else
-                    return false;
-            }
-
-            if (object.descriprion) {
-                if (object.descriprion.length < 200) {
-                    BufferObject.descriprion = object.descriprion;
-                    return true;
-                }
-                else
-                    return false;
-            }
-            else if(object.hashTags && object.hashTags.length > 0){
-                BufferObject.hashTags = object.hashTags;
-                return true;
-            }
-        }
-    }
-function сompareCreatedAt(a, b){
-        return(a.createdAt) - (b.createdAt);
-
-}
     function removePhotoPost(string){
         if(string-1 > photoPosts.length)
             console.log('нет такого id '+ string);
@@ -331,7 +313,7 @@ function сompareCreatedAt(a, b){
 
                 bufferArray = bufferArray.filter(function (photoPost) {
                     for (var hashTag of photoPost.hashTags) {
-                        for (var item of  [].concat(filterConfig.hashTags)) {
+                        for (var item of [].concat(filterConfig.hashTags)) {
                             if (hashTag === item) {
                                 return true;
                             }
@@ -356,13 +338,41 @@ function сompareCreatedAt(a, b){
       else
           console.log('no ');
           */
+
+
+    //editPhotoPost
+
    /* print(photoPosts);
     editPhotoPost('6',{descriprion:'rrrrrrrrrrrrrr', photoLink: 'oooo', hashTags:[] });
     Print(photoPosts);*/
+    /* print(photoPosts);
+    editPhotoPost('6',{descriprion:'', photoLink: 'oooo', hashTags:[] });
+    Print(photoPosts);*/
+    /* print(photoPosts);
+   editPhotoPost('6',{descriprion:'Uefa', photoLink: 'uuuirfn', hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] });
+   Print(photoPosts);*/
+    /* print(photoPosts);
+  editPhotoPost('6',{descriprion:'Uefa', hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] });
+  Print(photoPosts);*/
+    /* print(photoPosts);
+ editPhotoPost('6',{hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] });
+ Print(photoPosts);*/
+
+
+    //getPhotoPosts
 
     /* var array = new Array();
     array = getPhotoPosts(0,10,{author:'Mr.Snow', hashTags:'#CR7'});
     Print(array);*/
+    /* var array = new Array();
+    array = getPhotoPosts(0,10,{author:'Mr.Snow'});
+    Print(array);*/
+    /* var array = new Array();
+   array = getPhotoPosts(0,10,{author:'', hashTags:'#CR7'});
+   Print(array);*/
+
+
+
 
 
     //removePhotoPost('4');
@@ -375,7 +385,6 @@ function сompareCreatedAt(a, b){
         getPhotoPosts: getPhotoPosts,
         addPhotoPost: addPhotoPost,
         getPhotoPost: getPhotoPost,
-        countCorrectlyFild: countCorrectlyFild,
         editPhotoPost: editPhotoPost,
     }
 
