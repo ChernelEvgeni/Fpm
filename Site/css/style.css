@@ -30,13 +30,13 @@ div{
     width: 50px;
 }
 
-.container1{
+#infoPart{
     background: #D1FAEE;
     height: 250px;
     width: 100%;
 
 }
-.Filter {
+.filter {
     float: left;
     background: white;
     border: 5px solid #dddddd;
@@ -46,8 +46,11 @@ div{
     height: 100%;
 }
 
-.hashtagInput {
-    width: 100%;
+#hashtagInput {
+    width: 80%;
+}
+#authorInput{
+    width: 80%;
 }
 
 
@@ -55,7 +58,7 @@ div{
     margin-top: 0;
     font-size: 15px;
 }
-.Filter input{
+.filter input{
     width: 80%;
     margin-left:10%;
     margin-bottom: 3px;
@@ -64,7 +67,7 @@ div{
 
 }
 
-.Text{
+.textFilter{
     font-family: Сomic Sans MS, sans-serif;
     padding: 5px 0px 0px 0px;
     margin: 10px;
@@ -95,27 +98,42 @@ input
     text-align: center;
     font-size: 20px;
 }
+.buttonSign{
+    font-family:  Century Gothic, sans-serif ;
+    background: gray;
+    color: black;
+    width: 130px;
+    float: right;
+    margin-top: 50px;
+    padding: 10px;
+    margin-right: 50px;
+    text-align: center;
+    font-size: 18px;
+}
 
-#SizeButtoonSeach{
+#sizeButtoonSeach{
     background: white;
     margin: 10px 0 0 40px;
     font-family:  Century Gothic, sans-serif ;
     background: gray;
     width: 100px;
+    padding: 10px;
     text-align: center;
     font-size: 12px;
 }
-.ButttonAddPhoto{
+.buttonAdd{
     font-family:  Century Gothic, sans-serif ;
     background: gray;
     color: black;
+    padding: 10px;
     display: block;
     width: 130px;
     margin: 40px 0 0 100px;
+    padding: 10px;
     font-size: 12px;
 }
 
-.Photo{
+.photoLogotip{
     float: left;
     height: 75px;
     width: 75px;
@@ -123,16 +141,10 @@ input
     border-radius: 100px;
 }
 
-.TextHeader{
+#textHeader{
     margin-left: 5%;
     font-family:  Century Gothic, sans-serif ;
     font-size: 25px;
-}
-
-.TextStyle{
-    font-family:  Century Gothic, sans-serif ;
-    margin-left: 5%;
-    font-size: 16px;
 }
 
 .post{
@@ -142,7 +154,7 @@ input
     width: 400px;
     float:left;
 }
-.Color{
+#backgroundColorPost{
     background: #FDE2FA;
 }
 
@@ -153,7 +165,7 @@ input
     width: 27px;
     height: 27px;
 }
-.SizeButton{
+.sizeButton{
     background: white;
     border: white;
     margin: 0px;
@@ -204,12 +216,12 @@ input
 
 
 
-.photo{
+.photoPlace{
     max-height: 100%;
     width: 100%;
 }
 
-.Hashtag{
+.hashtag{
     position: absolute;
     margin: 0px;
     width: 400px;
@@ -264,26 +276,30 @@ input
     width: 200px;
     height: 100%;
 }
-.WindowPhoto{
+#infoUser{
     float: left;
     padding-top: 1%;
     width: 500px;
 }
 
-.TwoButton{
+#button{
     float: left;
     padding-top: 1%;
 }
-.ButttonAddPhoto{
+.buttonAdd{
     font-family:  Century Gothic, sans-serif ;
     background: gray;
     color: black;
     display: block;
     width: 130px;
     margin: 40px 0 0 100px;
+    padding: 10px;
     font-size: 12px;
 }
-.Info{
+
+
+
+#posts{
     height: 100%;
     background: #FDE2FA;
     padding-left: 5%;
@@ -300,33 +316,35 @@ input
 
 
 
-@media (min-width: 500px) and (max-width: 726px) {
+@media  (max-width: 730px) {
     /* стили для sm-устройств */
-    .WindowPhoto{
-        width: 180px;
+    #infoUser{
+        width: 150px;
     }
-    .Photo{
-
+    #textInfo{
+        font-family:  Century Gothic, sans-serif ;
+        margin-left: 10%;
+        font-size: 16px;
+    }
+    #textHeader{
+        margin-left: 10%;
+        font-family:  Century Gothic, sans-serif ;
+        font-size: 20px;
+    }
+    .photoLogotip{
         height: 75px;
         width: 75px;
         border: 2px solid white;
         border-radius: 100px;
         margin-left: 40px;
+
     }
-    .TwoButton{
-        float: left;
+    #button{
+        float: right;
         width: 140px;
     }
-    .ButttonAddPhoto{
-        font-family:  Century Gothic, sans-serif ;
-        background: gray;
-        color: black;
-        display: block;
-        width: 50px;
-        margin: 0px;
-        font-size: 12px;
-    }
-    .Filter {
+
+    .filter {
         float: left;
         background: white;
         border: 2px solid #dddddd;
@@ -334,7 +352,7 @@ input
         width: 170px;
         height: 100%;
     }
-    #Info{
+    #posts{
         height: 100%;
         background: #FDE2FA;
         padding-left: 10%;
@@ -347,42 +365,45 @@ input
         padding-top: 5px;
         padding-bottom: 70px;
     }
-    .ButttonAddPhoto{
+    .buttonAdd{
         font-family:  Century Gothic, sans-serif ;
         background: gray;
         color: black;
-        width: 130px;
+        display: block;
+        width: 80px;
+        margin: 10px;
+        padding: 10px;
         font-size: 12px;
-        float: left;
-        margin: 15px 40px 0 10px;
     }
 
 }
-@media (min-width: 727px) and (max-width: 799px) {
+@media (min-width: 731px) and (max-width: 964px) {
     /* стили для sm-устройств */
-    .WindowPhoto{
-        width: 440px;
+    #infoUser{
+        width: 340px;
     }
-    .Filter {
-        float: left;
-        background: white;
-        border: 5px solid #dddddd;
-        margin-left: 5%;
-        margin-right: 5%;
-        width: 200px;
-        height: 100%;
-    }
-
-    .TextStyle{
+    #textInfo{
         font-family:  Century Gothic, sans-serif ;
-        margin-left: 1%;
+        margin-left: 3%;
         font-size: 16px;
+
     }
-    .TwoButton{
+    .filter {
+        float: left;
+        background: white;
+        border: 5px solid #dddddd;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 200px;
+        height: 100%;
+    }
+
+
+    #button{
         display: block;
         float: left;
     }
-    #Info{
+    #posts{
         height: 100%;
         background: #FDE2FA;
         padding-left: 25%;
@@ -394,19 +415,21 @@ input
         padding-top: 30px;
         padding-bottom: 100px;
     }
-    .ButttonAddPhoto{
+    .buttonAdd{
         font-family:  Century Gothic, sans-serif ;
         background: gray;
         color: black;
         width: 130px;
+        padding: 10px;
         font-size: 12px;
         float: left;
         margin: 15px 42px 0 17px;
     }
 }
-@media (min-width: 800px) and (max-width: 1019px) {
+
+@media (min-width: 965px) and (max-width: 1209px) {
     /* стили для sm-устройств */
-    .Filter {
+    .filter {
         float: left;
         background: white;
         border: 5px solid #dddddd;
@@ -415,14 +438,14 @@ input
         width: 200px;
         height: 100%;
     }
-    .TwoButton{
+    #button{
         display: block;
         float: left;
     }
-    #Info{
+    #posts{
         height: 100%;
         background: #FDE2FA;
-        padding-left: 25%;
+        padding-left: 5%;
         padding-top: 5%;
         display: inline-block;
     }
@@ -431,7 +454,7 @@ input
         padding-top: 30px;
         padding-bottom: 100px;
     }
-    .ButttonAddPhoto{
+    .buttonAdd{
         font-family:  Century Gothic, sans-serif ;
         background: gray;
         color: black;
@@ -439,49 +462,12 @@ input
         font-size: 12px;
         float: left;
         margin: 15px 42px 0 17px;
-    }
-}
-@media (min-width: 1020px) and (max-width: 1209px) {
-    /* стили для sm-устройств */
-    .Filter {
-        float: left;
-        background: white;
-        border: 5px solid #dddddd;
-        margin-left: 5%;
-        margin-right: 5%;
-        width: 200px;
-        height: 100%;
-    }
-    .TwoButton{
-        display: block;
-        float: left;
-    }
-    #Info{
-        height: 100%;
-        background: #FDE2FA;
-        padding-left: 10%;
-        padding-right: 10%;
-        padding-top: 5%;
-        display: inline-block;
-    }
-    .download{
-        position: center;
-        padding-top: 30px;
-        padding-bottom: 100px;
-    }
-    .ButttonAddPhoto{
-        font-family:  Century Gothic, sans-serif ;
-        background: gray;
-        color: black;
-        width: 130px;
-        font-size: 12px;
-        float: left;
-        margin: 15px 42px 0 17px;
+        padding: 10px;
     }
 }
 @media (min-width: 1210px) and (max-width: 1418px) {
     /* стили для md-устройств */
-    #Info{
+    #posts{
         height: 100%;
         background: #FDE2FA;
         padding-left: 15%;
@@ -498,7 +484,7 @@ input
 }
 @media (min-width: 1419px) {
     /* стили для lg-устройств */
-    #Info{
+    #posts{
         height: 100%;
         background: #FDE2FA;
         padding-left: 5%;
