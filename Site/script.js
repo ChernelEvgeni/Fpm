@@ -2,7 +2,6 @@ var moduleDom=(function() {
     'use strict';
 
     var user = 'Real_Madrid';
-    var countPrintPost = postsFunction.SizePost();
 
     function showPhotoPost(photoPost){
         var isUser = (user === photoPost.author);
@@ -12,11 +11,11 @@ var moduleDom=(function() {
         if(isUser) {
             var buttonDelete = document.createElement('button');
             buttonDelete.className = 'sizeButton';
-            buttonDelete.innerHTML = "<img src=\"img/waste.png\"  alt=\"delete\" class=\"delete\">";
+            buttonDelete.innerHTML = "<img src='img/waste.png'  alt='delete' class='delete'>";
 
             var buttonEdit = document.createElement('button');
             buttonEdit.className = 'sizeButton';
-            buttonEdit.innerHTML = "<img src=\"img/edit.jpg\"  alt=\"edit\" class=\"edit\">";
+            buttonEdit.innerHTML = "<img src='img/edit.jpg'  alt='edit' class='edit'>";
 
             headPost.appendChild(buttonDelete);
             headPost.appendChild(buttonEdit);
@@ -28,10 +27,10 @@ var moduleDom=(function() {
 
         var nicknamePost = document.createElement('div');
         nicknamePost.className = 'nicknamePost';
-        nicknamePost.innerHTML = photoPost.author;
+        nicknamePost.textContent = photoPost.author;
         var datePhoto = document.createElement('div');
         datePhoto.className = 'datePhoto';
-        datePhoto.innerHTML = getFormatDate(photoPost)+" (" +getFormatTime(photoPost)+")";
+        datePhoto.textContent = getFormatDate(photoPost.createdAt)+" (" +getFormatTime(photoPost.createdAt)+")";
         blockNameDate.appendChild(nicknamePost);
         blockNameDate.appendChild(datePhoto);
 
@@ -48,15 +47,15 @@ var moduleDom=(function() {
 
         var hashtag = document.createElement('div');
         hashtag.className = 'hashtag';
-        hashtag.innerHTML = photoPost.hashTags;
+        hashtag.textContent = photoPost.hashTags;
 
         var buttonLike = document.createElement('button');
         buttonLike.className = 'sizeButton';
-        buttonLike.innerHTML = "<img src=\"img/like.png\"  alt=\"like\" class=\"like\">";
+        buttonLike.innerHTML = "<img src='img/like.png'  alt='like' class='like'>";
 
         var commit = document.createElement('div');
         commit.className = 'text';
-        commit.innerHTML = photoPost.descriprion;
+        commit.textContent = photoPost.descriprion;
 
         var post = document.createElement('arcicle');
         post.className = 'post';
@@ -75,7 +74,7 @@ var moduleDom=(function() {
     function addButtonSign() {
         var buttonExit = document.createElement('button');
         buttonExit.className = 'buttonSign';
-        buttonExit.innerHTML = 'Войти';
+        buttonExit.textContent = 'Войти';
 
         var infoPart = document.getElementById('infoPart');
         infoPart.appendChild(buttonExit);
@@ -100,50 +99,60 @@ var moduleDom=(function() {
     
     function setNickName() {
         var nickName = document.getElementById('textHeader');
-        nickName.innerText = user;
+        nickName.textContent = user;
     }
     function setCountPostByAutor() {
         var countPostByAutor = document.getElementById('textInfo');
-        countPostByAutor.innerText = 'Публикаций: '+ postsFunction.getCountPostByAuthor() ;
+        countPostByAutor.textContent = 'Публикаций: '+ postsFunction.getCountPostByAuthor() ;
 
     }
     function setButtonDownload(){
-        if(postsFunction.SizePost() > 10){
+        if(postsFunction.SizePost() > 9){
             var main = document.getElementById('backgroundColorPost');
             var download = document.createElement('div');
             download.className = 'download';
 
             var button = document.createElement('button');
             button.className = 'buttonAdd';
-            button.innerHTML =  'Загрузить ещё';
+            button.textContent =  'Загрузить ещё';
 
             download.appendChild(button);
             main.appendChild(download);
         }
     }
 
+    function updatePost() {
+        var posts = document.getElementById('posts');
+        posts.textContent = '';
+    }
 
     function showPosts(skip, top, filterConfig) {
         var photoPost = postsFunction.getPhotoPosts(skip, top, filterConfig);
-        for (var i = 0; i < photoPost.length; i++)
-            showPhotoPost(photoPost[i], i);
+        for (var i = 0; i < photoPost.length; i++){
+            showPhotoPost(photoPost[i]);
+        }
     }
 
     function addPost(post) {
         postsFunction.addPhotoPost(post);
         setCountPostByAutor();
-        countPrintPost++;
+        showPhotoPost(post);
     }
 
     function removePost(id) {
         postsFunction.removePhotoPost(id);
         setCountPostByAutor();
-        countPrintPost--;
+
+        updatePost();
+        showPosts(0,9);
     }
 
     function editPost(id,post) {
-        postsFunction.editPhotoPost(id, post);
+        var possitionPostInArray = postsFunction.editPhotoPost(id, post);
         setCountPostByAutor();
+
+        updatePost();
+        showPosts(0,9);
     }
     function checkUser() {
         if(user){
@@ -157,24 +166,28 @@ var moduleDom=(function() {
         }
     }
     checkUser();
-    function getFormatDate(post) {
-        var date = post.createdAt;
+    function getFormatDate(date) {
         var day = date.getDate();
-        if (day < 10) day = "0" + day;
+        if (day < 10){
+            day = "0" + day;
+        }
         var month = date.getMonth() + 1;
-        if (month < 10) month = "0" + month;
+        if (month < 10){
+            month = "0" + month;
+        }
         var year = date.getFullYear();
         return day + "." + month + "." + year;
     }
 
-    function getFormatTime(post) {
-        var date = post.createdAt;
+    function getFormatTime(date) {
         var hours = date.getHours();
-        if (hours < 10)
+        if (hours < 10){
             hours = "0" + hours;
+        }
         var minutes = date.getMinutes();
-        if (minutes < 10)
+        if (minutes < 10){
             minutes = "0" + minutes;
+        }
         return hours + ":" + minutes;
     }
 
@@ -199,12 +212,12 @@ var moduleDom=(function() {
     }
 
 
-    function getCountPost() {
-        return countPrintPost;
+    function getSizePost() {
+        return postsFunction.SizePost();
     }
     return {
         setButtonDownload:setButtonDownload,
-        getCountPost:getCountPost,
+        getSizePost:getSizePost,
         addFilterAuthors: addFilterAuthors,
         addFilterHashtags:addFilterHashtags,
         checkUser: checkUser,
@@ -221,47 +234,34 @@ var moduleDom=(function() {
 
 
 })();
+
+moduleDom.showPosts(0,moduleDom.getSizePost());
+
+
 console.log(moduleDom.addPost( {
-    id: '5',
-    descriprion: 'Real Betis 3-5 Real Madrid ⚽ 50\' @SergioRamos 📞',
-    createdAt: new Date('2018-02-23T23:00:00'),
-    author: 'Mr.Snow',
-    photoLink: 'img/Sergio_Ramos.jpg',
-    hashTags: ['#Real-Betis', '#@SergioRamos'],
-    like: ["Evgeni", "Alex"],
-}));
-console.log(moduleDom.addPost( {
-    id: '2',
-    descriprion: ' Another special Champions League night at the Bernabéu!\n' + '¡Noche de Champions mágica en el Bernabéu!',
-    createdAt: new Date('2018-02-20T19:40:00'),
-    author: 'Real_Madrid',
-    photoLink: 'img/Real-madrid-logo.jpg',
-    hashTags: ['#APorLa13', '#Marcelo', '#Zidan'],
-    like: ["Evgeni", "Alex"],
-}));
-console.log(moduleDom.addPost( {
-    id: '7',
-    descriprion: ' Real Madrid 3-1 Paris Saint-Germain',
-    createdAt: new Date('2018-02-04T10:23:11'),
-    author: 'Real_Madrid',
-    photoLink: 'img/3-1.jpg',
-    hashTags: ['#Emirates', '#RMUCL'],
-    like: ["Evgeni", "Alex"],
-}));
-console.log(moduleDom.addPost( {
-    id: '8',
+    id: '4',
     descriprion: ' Best moments of 2017:\n' + 'LaLiga 🏆',
     createdAt: new Date('2018-02-20T17:00:10'),
     author: 'Mr.Snow',
     photoLink: 'img/winner.jpg',
     hashTags: ['#HalaMadrid', '#Winner'],
+    like: ["Evni", "Alex"],
+}));
+console.log(moduleDom.addPost( {
+    id: '5',
+    descriprion: 'Real Madrid 5-2 Real Sociedad',
+    createdAt: new Date('2018-01-07T22:45:00'),
+    author: 'Real_Madrid',
+    photoLink: 'img/ronaldo.jpg',
+    hashTags: ['#HalaMadrid', '#Ronaldo', 'CR7'],
     like: ["Evgeni", "Alex"],
 }));
+
+
 console.log(moduleDom.addFilterHashtags());
 console.log(moduleDom.addFilterAuthors());
-//console.log(moduleDom.showPosts(0,5));
-//console.log(moduleDom.removePost('8'));
-console.log(moduleDom.editPost('2',{descriprion:'Uefa', hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] }));
+//console.log(moduleDom.removePost('4'));
+//console.log(moduleDom.editPost('2',{descriprion:'Uefa', hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] }));
 /*moduleDom.addPost( {
 id: '100',
 descriprion: ' Real Madrid 3-1 Paris Saint-Germain',
@@ -271,8 +271,9 @@ photoLink: 'img/3-1.jpg',
 hashTags: ['#Emirates', '#RMUCL'],
 like: ["Evgeni", "Alex"],
 });*/
-if(moduleDom.getCountPost()<10)
+/*if(moduleDom.getCountPost()<10)
 moduleDom.showPosts(0,moduleDom.getCountPost());
 else
     moduleDom.showPosts(0,10);
 moduleDom.setButtonDownload();
+*/

@@ -1,7 +1,7 @@
 var postsFunction =(function() {
     var user = 'Real_Madrid';
     var photoPosts = [
-        /*   {
+         {
                 id: '1',
                 descriprion: 'Real Betis 3-5 Real Madrid ⚽ 50\' @SergioRamos 📞',
                 createdAt: new Date('2018-02-23T23:00:00'),
@@ -15,21 +15,21 @@ var postsFunction =(function() {
                 descriprion: ' Another special Champions League night at the Bernabéu!\n' + '¡Noche de Champions mágica en el Bernabéu!',
                 createdAt: new Date('2018-02-20T19:40:00'),
                 author: 'Real_Madrid',
-                photoLink: 'img/Real-madrid-logo.jpg',
+                photoLink: 'img/Marcelo_Zidan.jpg',
                 hashTags: ['#APorLa13', '#Marcelo', '#Zidan'],
                 like: ["Evgeni", "ex"],
             },
-             /* {
+             {
                 id: '3',
                 descriprion: ' Real Madrid 3-1 Paris Saint-Germain',
                 createdAt: new Date('2018-02-04T10:23:11'),
                 author: 'Real_Madrid',
                 photoLink: 'img/3-1.jpg',
                 hashTags: ['#Emirates', '#RMUCL'],
-                like: ["Evgeni", "Ale,
+                like: ["Evgeni", "Alex"],
             },
-           /* {
-                id: '4',
+         {
+                id: '7',
                 descriprion: ' Best moments of 2017:\n' + 'LaLiga 🏆',
                 createdAt: new Date('2018-02-20T17:00:10'),
                 author: 'Mr.Snow',
@@ -37,7 +37,7 @@ var postsFunction =(function() {
                 hashTags: ['#HalaMadrid', '#Winner'],
                 like: ["Evni", "Alex"],
             },
-            {
+           /*    {
                 id: '5',
                 descriprion: 'Real Madrid 5-2 Real Sociedad',
                 createdAt: new Date('2018-01-07T22:45:00'),
@@ -221,7 +221,9 @@ var postsFunction =(function() {
            if(photopost.photoLink && photopost.photoLink.length){
                photoPosts[foundIndexPost].photoLink = photopost.photoLink;
            }
+           return foundIndexPost;
        }
+
     }
         function сompareCreatedAt(a, b){
            return(a.createdAt) - (b.createdAt);
@@ -230,16 +232,20 @@ var postsFunction =(function() {
     function removePhotoPost(id){
         var foundPost = photoPosts.findIndex(i => i.id === id)
 
-        if(foundPost == -1)
+        if(foundPost == -1){
             console.log('нет такого id '+ foundPost);
-    else
+        }
+    else{
             photoPosts.splice(foundPost,1);
+        }
+
+
     }
 
     function getPhotoPosts(skip,top,filterConfig) {
 
        skip = skip||0;
-       top = top||1;
+       top = top||10;
 
         var bufferArray = photoPosts.slice();
         if (filterConfig) {

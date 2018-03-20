@@ -1,5 +1,5 @@
 <!Doctype html>
-<html lang="rus">
+<html lang="ru">
 <head>
     <link rel="SHORTCUT ICON" href="img/pinnsvin.png" type="image/x-icon">
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
 
 <header>
     <div class="container_header">
-        <img src="img/pinnsvin.png"  alt="Pinnsvin" class="logo">
+        <img src="img/pinnsvin.png" alt="Pinnsvin" class="logo">
         <a href="HomePage.html">Pinnsvin</a>
     </div>
 </header>
@@ -24,17 +24,17 @@
         <div class="filter">
 
             <p class="textFilter">Фильтр</p>
-            <form class="Input">
-                <input type="text" placeholder="Введите имя" id="authorInput" list="authorList"/>
+            <div class="Input">
+                <input type="text"  name="authorInput" placeholder="Введите имя" id="authorInput" list="authorList"/>
                 <datalist id = "authorList" >
 
                 </datalist>
-                <input type="text" placeholder="Введите дату" />
-                <input type="text" placeholder="Введите хэштег"  id="hashtagInput" list="suggestions" />
+                <input  type="text" name="dateInput" placeholder="Введите дату" >
+                <input type="text"  name="hashtahInput" placeholder="Введите хэштег"  id="hashtagInput" list="suggestions" />
                 <datalist id = "suggestions" >
 
                 </datalist>
-            </form>
+            </div>
             <button id="sizeButtoonSeach">Поиск</button>
 
         </div>
@@ -43,7 +43,6 @@
             <img src=""  alt="" class="" id="userLog">
             <br/>
             <span id="textHeader"></span>
-            <br/>
             <br/>
             <span id="textInfo"></span>
         </div>

@@ -377,16 +377,16 @@ input
     }
 
 }
+#textInfo{
+    font-family:  Century Gothic, sans-serif ;
+    margin-left: 10%;
+    font-size: 16px;
+
+}
 @media (min-width: 731px) and (max-width: 964px) {
     /* стили для sm-устройств */
     #infoUser{
         width: 340px;
-    }
-    #textInfo{
-        font-family:  Century Gothic, sans-serif ;
-        margin-left: 3%;
-        font-size: 16px;
-
     }
     .filter {
         float: left;
@@ -480,6 +480,12 @@ input
         padding-top: 30px;
         padding-left: 40%;
         padding-bottom: 30px;
+    }
+    #textInfo{
+        font-family:  Century Gothic, sans-serif ;
+        margin-left: 10%;
+        font-size: 16px;
+
     }
 }
 @media (min-width: 1419px) {
