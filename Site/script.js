@@ -1,7 +1,7 @@
 var moduleDom=(function() {
     'use strict';
 
-    var user = 'Real_Madrid';
+    var user = null;
 
     function showPhotoPost(photoPost){
         var isUser = (user === photoPost.author);
@@ -124,6 +124,13 @@ var moduleDom=(function() {
     function updatePost() {
         var posts = document.getElementById('posts');
         posts.textContent = '';
+
+        var buttonDownload = document.getElementsByClassName('download')[0];
+        if(buttonDownload){
+            var main = document.getElementById('backgroundColorPost');
+            main.removeChild(buttonDownload);
+        }
+
     }
 
     function showPosts(skip, top, filterConfig) {
@@ -135,21 +142,30 @@ var moduleDom=(function() {
 
     function addPost(post) {
         postsFunction.addPhotoPost(post);
-        setCountPostByAutor();
-        showPhotoPost(post);
+        updatePost();
+        showPosts(0,9);
+        setButtonDownload();
+        if(user){
+            setCountPostByAutor();
+        }
     }
 
     function removePost(id) {
         postsFunction.removePhotoPost(id);
-        setCountPostByAutor();
+        if(user){
+            setCountPostByAutor();
+        }
 
         updatePost();
         showPosts(0,9);
+        setButtonDownload();
     }
 
     function editPost(id,post) {
         var possitionPostInArray = postsFunction.editPhotoPost(id, post);
-        setCountPostByAutor();
+        if(user){
+            setCountPostByAutor();
+        }
 
         updatePost();
         showPosts(0,9);
@@ -235,11 +251,10 @@ var moduleDom=(function() {
 
 })();
 
-moduleDom.showPosts(0,moduleDom.getSizePost());
 
 
 console.log(moduleDom.addPost( {
-    id: '4',
+    id: '9',
     descriprion: ' Best moments of 2017:\n' + 'LaLiga 🏆',
     createdAt: new Date('2018-02-20T17:00:10'),
     author: 'Mr.Snow',
@@ -248,7 +263,7 @@ console.log(moduleDom.addPost( {
     like: ["Evni", "Alex"],
 }));
 console.log(moduleDom.addPost( {
-    id: '5',
+    id: '10',
     descriprion: 'Real Madrid 5-2 Real Sociedad',
     createdAt: new Date('2018-01-07T22:45:00'),
     author: 'Real_Madrid',
@@ -260,9 +275,9 @@ console.log(moduleDom.addPost( {
 
 console.log(moduleDom.addFilterHashtags());
 console.log(moduleDom.addFilterAuthors());
-//console.log(moduleDom.removePost('4'));
-//console.log(moduleDom.editPost('2',{descriprion:'Uefa', hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] }));
-/*moduleDom.addPost( {
+console.log(moduleDom.removePost('4'));
+console.log(moduleDom.editPost('2',{descriprion:'Uefa', hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] }));
+moduleDom.addPost( {
 id: '100',
 descriprion: ' Real Madrid 3-1 Paris Saint-Germain',
 createdAt: new Date('2018-02-04T10:23:11'),
@@ -270,10 +285,4 @@ author: 'Real_Madrid',
 photoLink: 'img/3-1.jpg',
 hashTags: ['#Emirates', '#RMUCL'],
 like: ["Evgeni", "Alex"],
-});*/
-/*if(moduleDom.getCountPost()<10)
-moduleDom.showPosts(0,moduleDom.getCountPost());
-else
-    moduleDom.showPosts(0,10);
-moduleDom.setButtonDownload();
-*/
+});
