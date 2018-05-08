@@ -1,0 +1,502 @@
+body{
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    min-width: 500px;
+}
+
+header{
+    background: gray;
+    height: 60px;
+    width: 100%;
+}
+
+div{
+    box-sizing: border-box;
+}
+
+.container_header a{
+    position: absolute;
+    text-decoration:  none;
+    font-family: "Architects Daughter";
+    color: white;
+    font-size: 35px;
+    margin-top: 4px;
+}
+
+.logo{
+    margin: 5px 5px 5px 15%;
+    height: 50px;
+    width: 50px;
+}
+
+#infoPart{
+    background: #D1FAEE;
+    height: 250px;
+    width: 100%;
+
+}
+.filter {
+    float: left;
+    background: white;
+    border: 5px solid #dddddd;
+    margin-left: 12%;
+    margin-right: 10%;
+    width: 200px;
+    height: 100%;
+}
+
+#hashtagInput {
+    width: 80%;
+}
+#authorInput{
+    width: 80%;
+}
+
+
+.Input{
+    margin-top: 0;
+    font-size: 15px;
+}
+.filter input{
+    width: 80%;
+    margin-left:10%;
+    margin-bottom: 3px;
+    height: 25px;
+    font-size: 15px;
+
+}
+
+.textFilter{
+    font-family: Сomic Sans MS, sans-serif;
+    padding: 5px 0px 0px 0px;
+    margin: 10px;
+    text-align: center;
+    font-size: 20px;
+
+}
+
+input
+{
+    font-family: Сomic Sans MS, sans-serif;
+    position:inherit ;
+    align-self: center;
+    margin: 5px 0 20px 50px;
+}
+
+
+
+.button{
+    font-family:  Century Gothic, sans-serif ;
+    background: gray;
+    color: black;
+    border-radius: 30px;
+    display: block;
+    width: 100px;
+    padding: 5px;
+    margin: 20px auto auto auto;
+    text-align: center;
+    font-size: 20px;
+}
+.buttonSign{
+    font-family:  Century Gothic, sans-serif ;
+    background: gray;
+    color: black;
+    width: 130px;
+    float: right;
+    margin-top: 50px;
+    padding: 10px;
+    margin-right: 50px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#sizeButtoonSeach{
+    background: white;
+    margin: 10px 0 0 40px;
+    font-family:  Century Gothic, sans-serif ;
+    background: gray;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+.buttonAdd{
+    font-family:  Century Gothic, sans-serif ;
+    background: gray;
+    color: black;
+    padding: 10px;
+    display: block;
+    width: 130px;
+    margin: 40px 0 0 100px;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.photoLogotip{
+    float: left;
+    height: 75px;
+    width: 75px;
+    border: 2px solid white;
+    border-radius: 100px;
+}
+
+#textHeader{
+    margin-left: 5%;
+    font-family:  Century Gothic, sans-serif ;
+    font-size: 25px;
+}
+
+.post{
+    border: 1px solid #b3b3b3;
+    background: white;
+    height: 600px;
+    width: 400px;
+    float:left;
+}
+#backgroundColorPost{
+    background: #FDE2FA;
+}
+
+.delete{
+    margin-right: 10px;
+    margin-top: 3px;
+    float: right;
+    width: 27px;
+    height: 27px;
+}
+.sizeButton{
+    background: white;
+    border: white;
+    margin: 0px;
+    float: right;
+}
+
+.headPost{
+    height: 30px;
+    margin: 0px;
+}
+
+.edit{
+    margin-top: 5px;
+    float: right;
+    width: 23px;
+    height: 23px;
+}
+
+.nicknamePost{
+    font-size: 20px;
+    margin: auto;
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.datePhoto{
+    float:left;
+    font-size: 12px;
+    margin-left: 17px;
+    margin-top: 3px;
+}
+
+.blockNameDate{
+    margin-left: 60px;
+    margin-top: 3px;
+    width: 200px;
+    height: 50px;
+}
+
+.round{
+    float:left;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    margin-left: 10px;
+    padding-bottom: 2px;
+}
+
+
+
+.photoPlace{
+    max-height: 100%;
+    width: 100%;
+}
+
+.hashtag{
+    position: absolute;
+    margin: 0px;
+    width: 400px;
+    padding: 14px;
+    font-family: Сomic Sans MS, sans-serif;
+    font-size: 12px;
+    border: 1px solid #b3b3b3;
+    background: white;
+}
+
+.text{
+    width: 100%;
+    height: 50px;
+    margin: 0px 10px 10px 10px;
+    padding-top: 45px;
+    font-family: Сomic Sans MS, sans-serif;
+    font-size: 15px;
+}
+
+.like{
+    float: right;
+    position: relative;
+    margin-right: 10px;
+    margin-top: 0px;
+    width: 40px;
+    height: 40px;
+}
+
+.Footer{
+    background: grey;
+    height: 100%;
+    width: 100%;
+}
+
+.Footer p{
+    color: white;
+    margin: 0px;
+    padding: 30px 20% 20px 45%;
+    font-size: 15px;
+    font-family:  Century Gothic, sans-serif;
+
+}
+
+
+
+.Filter {
+    float: left;
+    background: white;
+    border: 5px solid #dddddd;
+    margin-left: 12%;
+    margin-right: 10%;
+    width: 200px;
+    height: 100%;
+}
+#infoUser{
+    float: left;
+    padding-top: 1%;
+    width: 500px;
+}
+
+#button{
+    float: left;
+    padding-top: 1%;
+}
+.buttonAdd{
+    font-family:  Century Gothic, sans-serif ;
+    background: gray;
+    color: black;
+    display: block;
+    width: 130px;
+    margin: 40px 0 0 100px;
+    padding: 10px;
+    font-size: 12px;
+}
+
+
+
+#posts{
+    height: 100%;
+    background: #FDE2FA;
+    padding-left: 5%;
+    padding-right: 10%;
+    padding-top: 5%;
+    display: inline-block;
+}
+.download{
+    position: center;
+    padding-top: 30px;
+    padding-left: 40%;
+    padding-bottom: 30px;
+}
+
+
+
+@media  (max-width: 730px) {
+    /* стили для sm-устройств */
+    #infoUser{
+        width: 150px;
+    }
+    #textInfo{
+        font-family:  Century Gothic, sans-serif ;
+        margin-left: 10%;
+        font-size: 16px;
+    }
+    #textHeader{
+        margin-left: 10%;
+        font-family:  Century Gothic, sans-serif ;
+        font-size: 20px;
+    }
+    .photoLogotip{
+        height: 75px;
+        width: 75px;
+        border: 2px solid white;
+        border-radius: 100px;
+        margin-left: 40px;
+
+    }
+    #button{
+        float: right;
+        width: 140px;
+    }
+
+    .filter {
+        float: left;
+        background: white;
+        border: 2px solid #dddddd;
+        margin:0%;
+        width: 170px;
+        height: 100%;
+    }
+    #posts{
+        height: 100%;
+        background: #FDE2FA;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 5%;
+        display: inline-block;
+    }
+    .download{
+        position: center;
+        padding-top: 5px;
+        padding-bottom: 70px;
+    }
+    .buttonAdd{
+        font-family:  Century Gothic, sans-serif ;
+        background: gray;
+        color: black;
+        display: block;
+        width: 80px;
+        margin: 10px;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+}
+#textInfo{
+    font-family:  Century Gothic, sans-serif ;
+    margin-left: 10%;
+    font-size: 16px;
+
+}
+@media (min-width: 731px) and (max-width: 964px) {
+    /* стили для sm-устройств */
+    #infoUser{
+        width: 340px;
+    }
+    .filter {
+        float: left;
+        background: white;
+        border: 5px solid #dddddd;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 200px;
+        height: 100%;
+    }
+
+
+    #button{
+        display: block;
+        float: left;
+    }
+    #posts{
+        height: 100%;
+        background: #FDE2FA;
+        padding-left: 25%;
+        padding-top: 5%;
+        display: inline-block;
+    }
+    .download{
+        position: center;
+        padding-top: 30px;
+        padding-bottom: 100px;
+    }
+    .buttonAdd{
+        font-family:  Century Gothic, sans-serif ;
+        background: gray;
+        color: black;
+        width: 130px;
+        padding: 10px;
+        font-size: 12px;
+        float: left;
+        margin: 15px 42px 0 17px;
+    }
+}
+
+@media (min-width: 965px) and (max-width: 1209px) {
+    /* стили для sm-устройств */
+    .filter {
+        float: left;
+        background: white;
+        border: 5px solid #dddddd;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 200px;
+        height: 100%;
+    }
+    #button{
+        display: block;
+        float: left;
+    }
+    #posts{
+        height: 100%;
+        background: #FDE2FA;
+        padding-left: 5%;
+        padding-top: 5%;
+        display: inline-block;
+    }
+    .download{
+        position: center;
+        padding-top: 30px;
+        padding-bottom: 100px;
+    }
+    .buttonAdd{
+        font-family:  Century Gothic, sans-serif ;
+        background: gray;
+        color: black;
+        width: 130px;
+        font-size: 12px;
+        float: left;
+        margin: 15px 42px 0 17px;
+        padding: 10px;
+    }
+}
+@media (min-width: 1210px) and (max-width: 1418px) {
+    /* стили для md-устройств */
+    #posts{
+        height: 100%;
+        background: #FDE2FA;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 5%;
+        display: inline-block;
+    }
+    .download{
+        position: center;
+        padding-top: 30px;
+        padding-left: 40%;
+        padding-bottom: 30px;
+    }
+    #textInfo{
+        font-family:  Century Gothic, sans-serif ;
+        margin-left: 10%;
+        font-size: 16px;
+
+    }
+}
+@media (min-width: 1419px) {
+    /* стили для lg-устройств */
+    #posts{
+        height: 100%;
+        background: #FDE2FA;
+        padding-left: 5%;
+        padding-right: 10%;
+        padding-top: 5%;
+        display: inline-block;
+    }
+
+}
