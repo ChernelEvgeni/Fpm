@@ -1,0 +1,280 @@
+<!Doctype html>
+<html lang="ru">
+<head>
+    <link rel="SHORTCUT ICON" href="img/pinnsvin.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>Pinnsvin</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Architects+Daughter" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<header>
+    <div class="container_header">
+        <img src="img/pinnsvin.png" alt="Pinnsvin" class="logo">
+        <a href="HomePage.html">Pinnsvin</a>
+    </div>
+</header>
+
+
+<section>
+    <div id="infoPart">
+
+        <div class="filter">
+
+            <p class="textFilter">Фильтр</p>
+            <div class="Input">
+                <input type="text"  name="authorInput" placeholder="Введите имя" id="authorInput" list="authorList"/>
+                <datalist id = "authorList" >
+
+                </datalist>
+                <input  type="text" name="dateInput" placeholder="Введите дату" >
+                <input type="text"  name="hashtahInput" placeholder="Введите хэштег"  id="hashtagInput" list="suggestions" />
+                <datalist id = "suggestions" >
+
+                </datalist>
+            </div>
+            <button id="sizeButtoonSeach">Поиск</button>
+
+        </div>
+
+       <div id="infoUser">
+            <img src=""  alt="" class="" id="userLog">
+            <br/>
+            <span id="textHeader"></span>
+            <br/>
+            <span id="textInfo"></span>
+        </div>
+
+        <div id="button">
+
+            <button class="buttonAdd">Добавить фото</button>
+             <button class="buttonAdd">Выйти</button>
+         </div>
+        <!-- <button class="buttonSign">
+             Войти
+         </button>-->
+
+      </div>
+  </section>
+
+  <main id="backgroundColorPost">
+
+
+      <section id="posts">
+          <!--
+                   <article class="post">
+                       <div class="headPost">
+                               <button class="sizeButton><img src="img/waste.pn" alt="" class="delete"></button>
+                           <button class="sizeButton"> <img src="img/edit.jpg" alt="" class="edit"></button>
+                           <img src="" alt="" class="round">
+                           <div class="blockNameDate">
+                               <div class="nicknamePost">
+                               </div>
+                               <div class="datePhoto">
+                               </div>
+                           </div>
+
+                       </div>
+
+                           <img src="" alt="" class="photo">
+                       <div class="hashtag">
+
+                       </div>
+                           <button class="sizeButton"><img src="img/like.png" alt="like" class="like"></button>
+                       <div class="text">
+
+                       </div>>
+                   </article>
+
+
+
+
+                          <article class="post">
+                              <div class="headPost">
+
+                                      <button class="sizeButton"><img src="img/waste.png" alt="" class="delete"></button>
+                                      <button class="sizeButton"> <img src="img/edit.jpg" alt="" class="edit"></button>
+
+                                  <img src="img/Real-madrid-logo.jpg" alt="real" class="round">
+                                  <div class="blockNameDate">
+                                      <div class="nicknamePost">
+                                          Real_Madrid
+                                      </div>
+                                      <div class="datePhoto">
+                                          20 февраля 2018
+                                      </div>
+                                  </div>
+
+                              </div>
+                              <div>
+                                  <img src="img/Marcelo_Zidan.jpg" alt="Marcelo_Zidan.jpg" class="photoPlace">
+                              </div>
+
+                              <div class="hashtag">
+                                  #APorLa13
+                              </div>
+                              <button class="sizeButton"><img src="img/like.png" alt="like" class="like"></button>
+                              <div class="text">
+                                  Another special Champions League night at the Bernabeu!
+                                  ?Noche de Champions magica en el Bernabeu!
+                              </div>
+                          </article>
+
+
+                          <article class="post">
+                              <div class="headPost">
+                                  <button class="sizeButton"><img src="img/waste.png" alt="" class="delete"></button>
+                                  <button class="sizeButton"> <img src="img/edit.jpg" alt="" class="edit"></button>
+                                  <img src="img/Real-madrid-logo.jpg" alt="" class="round">
+                                  <div class="blockNameDate">
+                                      <div class="nicknamePost">
+                                          Real_Madrid
+                                      </div>
+                                      <div class="datePhoto">
+                                          4 февраля 2018
+                                      </div>
+                                  </div>
+
+                              </div>
+                              <div class="photoPlace">
+                                  <img src="img/3-1.jpg" alt="" class="photo">
+                              </div>
+
+                              <div class="hashtag">
+                                  #Emirates | #RMUCL
+                              </div>
+                              <button class="sizeButton"><img src="img/like.png" alt="like" class="like"></button>
+                              <div class="text">
+                                  Real Madrid 3-1 Paris Saint-Germain
+                                  <br>
+                                  ? 33' Rabiot
+                                  <br>
+                                  ? 45' @Cristiano (p)
+                                  <br>
+                                  ? 83' @Cristiano
+                                  <br>
+                                  ? 86' @MarceloTwelve
+                              </div>
+                          </article>
+
+                          <article class="post">
+                              <div class="headPost">
+                                  <button class="sizeButton"><img src="img/waste.png" alt="" class="delete"></button>
+                                  <button class="sizeButton"> <img src="img/edit.jpg" alt="" class="edit"></button>
+                                  <img src="img/Real-madrid-logo.jpg" alt="" class="round">
+                                  <div class="blockNameDate">
+                                      <div class="nicknamePost">
+                                          Real_Madrid
+                                      </div>
+                                      <div class="datePhoto">
+                                          25 января 2018
+                                      </div>
+                                  </div>
+
+                              </div>
+                              <div class="photoPlace">
+                                  <img src="img/winner.jpg" alt="" class="photo">
+                              </div>
+
+                              <div class="hashtag">
+                                  #HalaMadrid
+                              </div>
+                              <button class="sizeButton"><img src="img/like.png" alt="like" class="like"></button>
+                              <div class="text">
+                                  Best moments of 2017:
+                                  LaLiga ??
+                              </div>
+                          </article>
+
+
+                          <article class="post">
+                              <div class="headPost">
+                                  <button class="sizeButton"><img src="img/waste.png" alt="" class="delete"></button>
+                                  <button class="sizeButton"> <img src="img/edit.jpg" alt="" class="edit"></button>
+                                  <img src="img/Real-madrid-logo.jpg" alt="" class="round">
+                                  <div class="blockNameDate">
+                                      <div class="nicknamePost">
+                                          Real_Madrid
+                                      </div>
+                                      <div class="datePhoto">
+                                          7 января 2018
+                                      </div>
+                                  </div>
+
+                              </div>
+                              <div class="photoPlace">
+                                  <img src="img/ronaldo.jpg" alt="" class="photo">
+                              </div>
+
+                              <div class="hashtag">
+                                  #HalaMadrid
+                              </div>
+                              <button class="sizeButton"><img src="img/like.png" alt="like" class="like"></button>
+                              <div class="text">
+                                  Real Madrid 5-2 Real Sociedad
+                              </div>
+                          </article>
+
+                          <article class="post">
+                              <div class="headPost">
+                                  <button class="sizeButton"><img src="img/waste.png" alt="" class="delete"></button>
+                                  <button class="sizeButton"> <img src="img/edit.jpg" alt="" class="edit"></button>
+                                  <img src="img/Real-madrid-logo.jpg" alt="" class="round">
+                                  <div class="blockNameDate">
+                                      <div class="nicknamePost">
+                                          Real_Madrid
+                                      </div>
+                                      <div class="datePhoto">
+                                          1 декабря 2018
+                                      </div>
+                                  </div>
+
+                              </div>
+                              <div class="photoPlace">
+                                  <img src="img/Asensio.jpg" alt="" class="photo">
+                              </div>
+
+                              <div class="hashtag">
+                                  #RMCopa | #HalaMadrid
+                              </div>
+                              <button class="sizeButton"><img src="img/like.png" alt="like" class="like"></button>
+                              <div class="text">
+                                  Leganes 0-1 Real Madrid
+                                  ? 89' @MarcoAsensio10
+                              </div>
+                          </article>
+          -->
+            </section>
+
+            <!--
+            <div class="download">
+                <button class="buttonAdd">Загрузить ещё</button>
+            </div>-->
+
+
+
+        </main>
+
+        <footer class="Footer">
+            <div >
+
+                <p>
+                    Название портала: Pinnsvin
+                    </br></br>
+                    Имя автора: Чернель Евгений
+                    </br></br>
+                    Курс и группа: 2 курс, 6 группа
+                    </br></br>
+                    Email для контактов: chernelz@mail.ru
+                    </br></br>
+                    Дата последнего изменения портала: 24.02.2018
+                </p>
+
+            </div>
+        </footer>
+        <script src = "js/main.js"></script>
+        <script src = "script.js"></script>
+        </body>
+        </html>
