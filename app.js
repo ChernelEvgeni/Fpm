@@ -2,8 +2,8 @@ var express = require('express');
 var app = express();
 const bodyParser = require('body-parser');
 const fs = require("fs");
-const functional = require('E:/YP/Site/server/functionsServer.js');
-const way = 'E:/YP/Site/server/data/posts.json';
+const functional = require('./server/functionsServer.js');
+const way = './server/data/posts.json';
 app.use('/', express.static('public'));
 app.use(bodyParser.json());
 
@@ -17,6 +17,7 @@ app.get('/getPost', (req, res) => {
         res.send(404).end();
     }
 });
+
 
 app.delete('/removePhotoPost', (req, res) => {
     let post = functional.removePhotoPost(req.query.id.toString());

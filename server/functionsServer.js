@@ -18,7 +18,7 @@ var postsFunction = function() {
 
         return false;
     }
-    console.log(addPhotoPost({id:"100",descriprion:"Real Madrid 3-1 Paris Saint-Germain",createdAt:"2018-02-04T10:23:11",author:"Real_Madrid",photoLink:"img/3-1.jpg",hashTags:["#Emirates","#RMUCL"],like:["Evgeni","Alex"]}));
+   // console.log(addPhotoPost({id:"100",descriprion:"Real Madrid 3-1 Paris Saint-Germain",createdAt:"2018-02-04T10:23:11",author:"Real_Madrid",photoLink:"img/3-1.jpg",hashTags:["#Emirates","#RMUCL"],like:["Evgeni","Alex"]}));
 
     function getAllPosts() {
         return photoPosts;
@@ -37,6 +37,7 @@ var postsFunction = function() {
        })
         return found;
     }
+  //  console.log(getPhotoPost("3"));
 //console.log(editPhotoPost("7",{descriprion:'Uefa', photoLink: 'uuuirfn', hashTags: ['#APorLa13', '#Marcelo', '#Zidan'] }));
 
     function editPhotoPost(id, photopost){

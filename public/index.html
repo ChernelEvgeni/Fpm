@@ -49,8 +49,8 @@
 
         <div id="button">
 
-            <button class="buttonAdd">Добавить фото</button>
-             <button class="buttonAdd">Выйти</button>
+            <button id="buttonAdd" value="addPhoto">Добавить фото</button>
+             <button id="buttonExit">Выйти</button>
          </div>
         <!-- <button class="buttonSign">
              Войти
@@ -62,6 +62,38 @@
   <main id="backgroundColorPost">
 
 
+      <div id="error">
+          <b> К сожалению, эта страница недоступна. </b>
+          <p>Возможно, вы воспользовались недействительной ссылкой или страница была удалена.</p>
+      </div>
+
+      <div id="addChangePhoto">
+          <h1>Добавление/редактирование фотопоста</h1>
+          <div id="placeAddPhoto">
+
+              <div id = "textInPlaceAddPhoto">
+                  <b>Так будет выглядеть ваша фотография</b>
+              </div>
+          </div>
+          <div id="editingPhoto">
+              <textarea placeholder="Имя автора" cols="40" rows="1" id="nameFieldsEditPost" readonly></textarea>
+              <textarea placeholder="Дата добавления" cols="40" rows="1" id="dateFieldsEditPost" readonly>Дата</textarea>
+              <textarea placeholder="URL-адресс фотографии" cols="40" rows="1" id="urlFieldsEditPost"></textarea>
+              <textarea placeholder="Хэштеги" cols="40" rows="1" id="hashtagsFieldsEditPost"></textarea>
+              <textarea placeholder="Описание:" cols="40" rows="1" id="descriptionFieldsEditPost"></textarea>
+              <button id="btnEdit">Применить изменения</button>
+              <button id="btnAdd">Применить изменения</button>
+          </div>
+      </div>
+
+
+      <div id="isDelete">
+          <div id="textIsDelete"><b>Вы действительно хотите удалить пост?</b></div>
+          <div id="btnIsDelete">
+              <button id="noDelete"><b>Нет</b></button>
+              <button id="yesDelete"><b>Да</b></button>
+          </div>
+      </div>
       <section id="posts">
           <!--
                    <article class="post">
@@ -275,6 +307,7 @@
             </div>
         </footer>
         <script src = "js/main.js"></script>
-        <script src = "script.js"></script>
+        <script src = "js/script.js"></script>
+        <script src = "js/event.js"></script>
         </body>
         </html>

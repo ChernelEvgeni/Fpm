@@ -1,7 +1,19 @@
 var moduleDom=(function() {
     'use strict';
 
-    var user = null;
+    var showedPosts = 0;
+    var user = "Real_Madrid";
+    function setUser(name) {
+        user = name;
+        showPosts(0, 10);
+    }
+
+    function getUser() {
+        return user;
+    }
+    function getShowedPosts() {
+        return showedPosts;
+    }
 
     function showPhotoPost(photoPost){
         var isUser = (user === photoPost.author);
@@ -11,11 +23,11 @@ var moduleDom=(function() {
         if(isUser) {
             var buttonDelete = document.createElement('button');
             buttonDelete.className = 'sizeButton';
-            buttonDelete.innerHTML = "<img src='img/waste.png'  alt='delete' class='delete'>";
+            buttonDelete.innerHTML = `<img src='img/waste.png' value='${photoPost.id}' alt='delete' class='delete'>`;
 
             var buttonEdit = document.createElement('button');
             buttonEdit.className = 'sizeButton';
-            buttonEdit.innerHTML = "<img src='img/edit.jpg'  alt='edit' class='edit'>";
+            buttonEdit.innerHTML = `<img src='img/edit.jpg' value='${photoPost.id}' alt='edit' class='edit'>`;
 
             headPost.appendChild(buttonDelete);
             headPost.appendChild(buttonEdit);
@@ -39,7 +51,6 @@ var moduleDom=(function() {
         imgUser.setAttribute('src','img/Real-madrid-logo.jpg');
         headPost.appendChild(imgUser);
         headPost.appendChild(blockNameDate);
-        console.log(headPost);
 
         var photo = document.createElement('img');
         photo.className = 'photoPlace';
@@ -51,7 +62,13 @@ var moduleDom=(function() {
 
         var buttonLike = document.createElement('button');
         buttonLike.className = 'sizeButton';
-        buttonLike.innerHTML = "<img src='img/like.png'  alt='like' class='like'>";
+
+        if(postsFunction.isLikeInPost(photoPost.id,user)){
+            buttonLike.innerHTML = `<img src='img/like.png' value='${photoPost.id}' isLike = '1' alt='like' class='like'>`;
+        }else {
+            buttonLike.innerHTML = `<img src='img/like.png' value='${photoPost.id}' isLike = '0' alt='like' class='like'>`;
+        }
+
 
         var commit = document.createElement('div');
         commit.className = 'text';
@@ -64,6 +81,7 @@ var moduleDom=(function() {
         post.appendChild(hashtag);
         post.appendChild(buttonLike);
         post.appendChild(commit);
+
 
 
         var posts = document.getElementById('posts');
@@ -107,13 +125,13 @@ var moduleDom=(function() {
 
     }
     function setButtonDownload(){
-        if(postsFunction.SizePost() > 9){
+        if(postsFunction.SizePost() > 9 && postsFunction.SizePost()>getShowedPosts()){
             var main = document.getElementById('backgroundColorPost');
             var download = document.createElement('div');
             download.className = 'download';
 
             var button = document.createElement('button');
-            button.className = 'buttonAdd';
+            button.id = 'buttonDownload';
             button.textContent =  'Загрузить ещё';
 
             download.appendChild(button);
@@ -122,9 +140,6 @@ var moduleDom=(function() {
     }
 
     function updatePost() {
-        var posts = document.getElementById('posts');
-        posts.textContent = '';
-
         var buttonDownload = document.getElementsByClassName('download')[0];
         if(buttonDownload){
             var main = document.getElementById('backgroundColorPost');
@@ -134,10 +149,13 @@ var moduleDom=(function() {
     }
 
     function showPosts(skip, top, filterConfig) {
+        clear();
         var photoPost = postsFunction.getPhotoPosts(skip, top, filterConfig);
         for (var i = 0; i < photoPost.length; i++){
             showPhotoPost(photoPost[i]);
+            showedPosts++;
         }
+
     }
 
     function addPost(post) {
@@ -166,7 +184,6 @@ var moduleDom=(function() {
         if(user){
             setCountPostByAutor();
         }
-
         updatePost();
         showPosts(0,9);
     }
@@ -227,11 +244,91 @@ var moduleDom=(function() {
         }
     }
 
+    function setIsDelete() {
+        let isDelete = document.getElementById('isDelete');
+        isDelete.style.display = 'block';
+    }
+
+    function hideIsDelete() {
+        let isDelete = document.getElementById('isDelete');
+        isDelete.style.display = 'none';
+    }
 
     function getSizePost() {
         return postsFunction.SizePost();
     }
+
+    function setErrorPage() {
+        clear();
+        document.getElementById('error').style.display = 'block';
+    }
+
+    function setEditPost(id) {
+        clear();
+        let post = postsFunction.getPhotoPost(id);
+        let photoPlace = document.getElementById('placeAddPhoto');
+
+        let imgPhoto = document.createElement('img');
+        imgPhoto.className = 'photo';
+        imgPhoto.setAttribute('src', post.photoLink);
+        photoPlace.appendChild(imgPhoto);
+        document.getElementById('addChangePhoto').style.display = 'block';
+        document.getElementById('btnEdit').style.display = 'block';
+        document.getElementById('btnAdd').style.display = 'none';
+        let nameFieldsEditPost = document.getElementById('nameFieldsEditPost');
+        nameFieldsEditPost.value = user;
+
+
+        let date = document.getElementById('dateFieldsEditPost');
+        date.value = getFormatDate(post.createdAt);
+        let urlPhoto = document.getElementById('urlFieldsEditPost');
+        urlPhoto.value = post.photoLink;
+        let hashtags = document.getElementById('hashtagsFieldsEditPost');
+        let hashtagsString = '';
+        for (let i = 0; i < post.hashTags.length; i++) {
+            hashtagsString += post.hashTags[i] + ' ';
+        }
+        hashtags.value = hashtagsString;
+        let descriptionFieldsEditPost = document.getElementById('descriptionFieldsEditPost');
+        descriptionFieldsEditPost.value = post.descriprion;
+    }
+    function createPhotoPost() {
+        clear();
+        document.getElementById('placeAddPhoto').innerHTML = `
+            <input type="file" name="avatar" accept="image/*" id = "inputPhoto">  `;
+        document.getElementById('btnEdit').style.display = 'none';
+        document.getElementById('btnAdd').style.display = 'block';
+        document.getElementById('addChangePhoto').style.display = 'block';
+        document.getElementById('dateFieldsEditPost').value = 'Дата';
+        document.getElementById('nameFieldsEditPost').value = moduleDom.getUser();
+        document.getElementById('urlFieldsEditPost').value = '';
+        document.getElementById('hashtagsFieldsEditPost').value = '';
+        document.getElementById('descriptionFieldsEditPost').value = '';
+    }
+
+    function clear() {
+        showedPosts = 0;
+        let posts = document.getElementById('posts');
+        posts.innerHTML = '';
+
+        //  document.getElementById('filtering').style.display = 'none';
+        //document.getElementById('buttonDownload').style.display = 'none';
+        document.getElementById('error').style.display = 'none';
+        document.getElementById('addChangePhoto').style.display = 'none';
+        document.getElementById('placeAddPhoto').innerHTML = '';
+    }
+
     return {
+        getShowedPosts:getShowedPosts,
+        getUser:getUser,
+        setUser:setUser,
+        hideIsDelete:hideIsDelete,
+        setIsDelete:setIsDelete,
+        createPhotoPost:createPhotoPost,
+        setErrorPage:setErrorPage,
+        setEditPost:setEditPost,
+        createPhotoPost:createPhotoPost,
+        setEditPost:setEditPost,
         setButtonDownload:setButtonDownload,
         getSizePost:getSizePost,
         addFilterAuthors: addFilterAuthors,
@@ -253,24 +350,6 @@ var moduleDom=(function() {
 
 
 
-console.log(moduleDom.addPost( {
-    id: '9',
-    descriprion: ' Best moments of 2017:\n' + 'LaLiga 🏆',
-    createdAt: new Date('2018-02-20T17:00:10'),
-    author: 'Mr.Snow',
-    photoLink: 'img/winner.jpg',
-    hashTags: ['#HalaMadrid', '#Winner'],
-    like: ["Evni", "Alex"],
-}));
-console.log(moduleDom.addPost( {
-    id: '10',
-    descriprion: 'Real Madrid 5-2 Real Sociedad',
-    createdAt: new Date('2018-01-07T22:45:00'),
-    author: 'Real_Madrid',
-    photoLink: 'img/ronaldo.jpg',
-    hashTags: ['#HalaMadrid', '#Ronaldo', 'CR7'],
-    like: ["Evgeni", "Alex"],
-}));
 
 
 console.log(moduleDom.addFilterHashtags());
